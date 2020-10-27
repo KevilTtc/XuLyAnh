@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg" >
+
+    <include
+        android:id="@+id/common_top_bar"
+        layout="@layout/layout_common_top_bar" />
+
+    <LinearLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/addpic"
+        android:layout_below="@+id/common_top_bar"
+        android:gravity="center"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/addpic"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:id="@+id/filtersList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/chunvzuo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="5dp"
+                android:drawableTop="@drawable/icon_auto"
+                android:text="Xử Nữ"
+                android:textColor="#117d55" />
+
+            <TextView
+                android:id="@+id/shenhuifu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:drawableTop="@drawable/icon_auto"
+                android:text="Thần trả lời"
+                android:textColor="#117d55" />
+
+            <TextView
+                android:id="@+id/qiugouda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:drawableTop="@drawable/icon_auto"
+                android:text="Ăn xin"
+                android:textColor="#117d55" />
+
+            <TextView
+                android:id="@+id/guaishushu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:drawableTop="@drawable/icon_auto"
+                android:text="Kỳ dị"
+                android:textColor="#117d55" />
+
+            <TextView
+                android:id="@+id/haoxingzuo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:drawableTop="@drawable/icon_auto"
+                android:text="Chòm sao tốt"
+                android:textColor="#117d55" />
+
+            <TextView
+                android:id="@+id/wanhuaile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:drawableTop="@drawable/icon_auto"
+                android:text="Bị hỏng"
+                android:textColor="#117d55" />
+
+            <TextView
+                android:id="@+id/xiangsi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:drawableTop="@drawable/icon_auto"
+                android:text="Tình yêu"
+                android:textColor="#117d55" />
+
+            <TextView
+                android:id="@+id/xingzuokong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:drawableTop="@drawable/icon_auto"
+                android:text="Kiểm soát chòm sao"
+                android:textColor="#117d55" />
+
+            <TextView
+                android:id="@+id/xinnian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:drawableTop="@drawable/icon_auto"
+                android:text="năm mới"
+                android:textColor="#117d55" />
+
+            <TextView
+                android:id="@+id/zaoan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:drawableTop="@drawable/icon_auto"
+                android:text="buổi sáng tốt lành"
+                android:textColor="#117d55" />
+
+            <TextView
+                android:id="@+id/zuile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:drawableTop="@drawable/icon_auto"
+                android:text="say"
+                android:textColor="#117d55" />
+
+            <TextView
+                android:id="@+id/jiuyaozuo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:drawableTop="@drawable/icon_auto"
+                android:text="Sẽ làm"
+                android:textColor="#117d55" />
+            <TextView
+                android:id="@+id/zui"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:drawableTop="@drawable/icon_auto"
+                android:text="Say rượu"
+                android:textColor="#117d55" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</RelativeLayout>

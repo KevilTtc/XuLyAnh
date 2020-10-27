@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/action_flower"
+        android:title="Màu sắc"
+        />
+
+    <item android:id="@+id/action_base"
+        android:title="Căn bản"
+        />
+
+    <item android:id="@+id/action_ground_glass"
+        android:title="Kính mờ"
+        />
+
+    <item android:id="@+id/action_size"
+        android:title="kích thước"
+        />
+
+
+    <item android:id="@+id/action_eraser"
+        android:title="Tẩy"
+        />
+
+</menu>

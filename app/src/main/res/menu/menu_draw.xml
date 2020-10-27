@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/action_paint_one"
+        android:title="Bút vẽ 1"
+        />
+    <item android:id="@+id/action_paint_two"
+        android:title="Bút vẽ 2"/>
+
+    <item android:id="@+id/action_size"
+        android:title="Kích thước bút vẽ"
+        />
+
+    <item android:id="@+id/action_color"
+        android:title="Màu bút"
+        />
+
+    <item android:id="@+id/action_pic"
+        android:title="Kết cấu"
+        />
+    <item android:id="@+id/action_eraser"
+        android:title="Tẩy"
+        />
+
+</menu>

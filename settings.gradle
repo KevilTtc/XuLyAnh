@@ -1,0 +1,3 @@
+rootProject.name='Edit'
+include ':app', ':photoedit1'
+include ':photoedit'

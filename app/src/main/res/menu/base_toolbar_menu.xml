@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/action_filter"
+        android:title="Bộ lọc"
+        />
+    <item android:id="@+id/action_wrap"
+        android:title="Thay đổi hình dáng"
+        />
+    <item android:id="@+id/action_frame"
+        android:title="khung"
+        />
+    <item android:id="@+id/action_draw"
+        android:title="Vẽ"
+        />
+    <item android:id="@+id/action_mosaic"
+        android:title="Khảm"
+        />
+    <item android:id="@+id/action_crop"
+        android:title="Cắt"
+        />
+    <item android:id="@+id/action_addwm"
+        android:title="Làm mờ"
+        />
+    <item android:id="@+id/action_enchance"
+        android:title="Nâng cao hình ảnh"
+        />
+    <item android:id="@+id/action_rotate"
+        android:title="Quay"
+        />
+    <item android:id="@+id/action_addtv"
+        android:title="Nhập kí tự"
+        />
+
+</menu>
