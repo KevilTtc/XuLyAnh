@@ -29,7 +29,7 @@ public class NativeFilter {
 
 
     /**
-     * 灰色
+     * gray
      * @param pixels Bộ pixel hình ảnh
      * @param width  Chiều rộng pixel hình ảnh
      * @param height Chiều cao pixel hình ảnh

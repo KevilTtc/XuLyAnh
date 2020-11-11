@@ -106,6 +106,9 @@ public class ImageFilterActivity extends Activity implements View.OnClickListene
                                                   int progress, boolean fromUser)
                     {
                         mProgress = progress;
+                        float degree = mProgress / 100.0f;
+
+                        updatePicture(degree);
 
                     }
                 });
@@ -191,10 +194,10 @@ public class ImageFilterActivity extends Activity implements View.OnClickListene
                 break;
             case FilterType.FILTER4MOSATIC :
 
-                int mosatic = (int) (degree * 30);
-                dataResult = nativeFilters.mosatic(pix, srcWidth, srcHeight,
-                        mosatic);
-                break;
+//                int mosatic = (int) (degree * 30);
+//                dataResult = nativeFilters.mosatic(pix, srcWidth, srcHeight,
+//                        mosatic);
+//                break;
 
             case FilterType.FILTER4LOMO :
 
@@ -269,12 +272,20 @@ public class ImageFilterActivity extends Activity implements View.OnClickListene
                 break;
         }
 
+
+        //resultImg Trả về một bitmap bất biến với độ rộng và chiều cao đã xác định,
+        // với mỗi giá trị pixel được đặt thành giá trị tương ứng trong mảng màu.
+        //colors	int: Mảng sRGB Colordùng để khởi tạo các pixel. Mảng này ít nhất phải lớn bằng chiều rộng * chiều cao.
+        // Giá trị này không được null.
+        //Bitmap.Config: Cấu hình bitmap để tạo. Nếu cấu hình không hỗ trợ alpha(kênh màu) trên mỗi pixel (ví dụ: RGB_565),
+        // thì các byte alpha trong các màu [] sẽ bị bỏ qua (giả sử là FF)
         resultImg = Bitmap.createBitmap(dataResult, srcWidth, srcHeight,
                 Bitmap.Config.ARGB_8888);
 
+        // set sellect img
         // FilterType filterType = new FilterType();
         // Bitmap resultImg = filterType.createPencli(newBitmap);
-
+        //get img
         pictureShow.setImageBitmap(resultImg);
 
     }
@@ -410,10 +421,11 @@ public class ImageFilterActivity extends Activity implements View.OnClickListene
                     break;
             }
 
-            updatePicture(1);
+
             mVerticalSeekBar.setProgress(100);
             mSeekBarProgress.setText(100 + "%");
             mVerticalSeekBar.setProgressAndThumb(mVerticalSeekBar.getMax());
+            updatePicture(1);
 
         }
 

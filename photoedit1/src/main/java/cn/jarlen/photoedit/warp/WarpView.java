@@ -80,6 +80,7 @@ public class WarpView extends View {
     public WarpView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
+        //Create a new rectangle with the tọa độ xác định
         dest = new RectF(0, 0, 0, 0);
     }
 
@@ -106,6 +107,7 @@ public class WarpView extends View {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
+            // Bắt sự kiện vuốt chạm kéo
             case MotionEvent.ACTION_DOWN:
                 orig_x = event.getX();
                 orig_y = event.getY();
@@ -129,6 +131,7 @@ public class WarpView extends View {
                     // orig_y = (event.getHistoricalY(i2) - dest.top)*scale;
                     // }
                     if (move_x >= 0 && move_y >= 0) {
+                        // change img
                         warp.warpPhotoFromC(image, height, width, max_dist,
                                 orig_x, orig_y, move_x, move_y);
 

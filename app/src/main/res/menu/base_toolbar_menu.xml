@@ -2,34 +2,34 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/action_filter"
-        android:title="Bộ lọc"
+        android:title="Filter"
         />
     <item android:id="@+id/action_wrap"
-        android:title="Thay đổi hình dáng"
+        android:title="adjust stretching"
         />
-    <item android:id="@+id/action_frame"
-        android:title="khung"
-        />
+<!--    <item android:id="@+id/action_frame"-->
+<!--        android:title="khung"-->
+<!--        />-->
     <item android:id="@+id/action_draw"
-        android:title="Vẽ"
+        android:title="draw"
         />
-    <item android:id="@+id/action_mosaic"
-        android:title="Khảm"
-        />
+<!--    <item android:id="@+id/action_mosaic"-->
+<!--        android:title="Khảm"-->
+<!--        />-->
     <item android:id="@+id/action_crop"
-        android:title="Cắt"
+        android:title="Crop"
         />
-    <item android:id="@+id/action_addwm"
-        android:title="Làm mờ"
-        />
+<!--    <item android:id="@+id/action_addwm"-->
+<!--        android:title="Làm mờ"-->
+<!--        />-->
     <item android:id="@+id/action_enchance"
-        android:title="Nâng cao hình ảnh"
+        android:title="Enhance"
         />
     <item android:id="@+id/action_rotate"
-        android:title="Quay"
+        android:title="Rotate"
         />
     <item android:id="@+id/action_addtv"
-        android:title="Nhập kí tự"
+        android:title="input text"
         />
 
 </menu>

@@ -133,7 +133,7 @@ public class MainActivity extends Activity implements View.OnClickListener,
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         toolbar.setNavigationIcon(R.drawable.ic_launcher);
-        toolbar.setTitle("PicDemo");
+        toolbar.setTitle("Photo Editor");
         toolbar.inflateMenu(R.menu.base_toolbar_menu);
         toolbar.setOnMenuItemClickListener(this);
 
@@ -202,8 +202,10 @@ public class MainActivity extends Activity implements View.OnClickListener,
 
     /* Lấy ảnh từ máy ảnh */
     private void getPictureFormCamera() {
-        Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
+
+         intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
         tempPhotoPath = FileUtils.DCIMCamera_PATH + FileUtils.getNewFileName()
                 + ".jpg";
 
@@ -218,9 +220,8 @@ public class MainActivity extends Activity implements View.OnClickListener,
             }
         }
 
-        intent.putExtra(MediaStore.EXTRA_OUTPUT,
-                Uri.fromFile(mCurrentPhotoFile));
         startActivityForResult(intent, CAMERA_WITH_DATA);
+
     }
 
     private void compressed() {
@@ -237,7 +238,7 @@ public class MainActivity extends Activity implements View.OnClickListener,
                 if (content_layout.getWidth() != 0) {
                     Log.i("LinearLayoutW", content_layout.getWidth() + "");
                     Log.i("LinearLayoutH", content_layout.getHeight() + "");
-                    // 取消定时器
+                    // Hủy hẹn giờ
                     timer.cancel();
                     compressed();
                 }
@@ -287,12 +288,8 @@ public class MainActivity extends Activity implements View.OnClickListener,
         switch (requestCode) {
             case CAMERA_WITH_DATA:
 
-                photoPath = tempPhotoPath;
-                if (content_layout.getWidth() == 0) {
-                    timer.schedule(task, 10, 1000);
-                } else {
-                    compressed();
-                }
+                Bitmap image = (Bitmap) data.getExtras().get("data");
+                pictureShow.setImageBitmap(image);
 
                 break;
 
@@ -348,15 +345,18 @@ public class MainActivity extends Activity implements View.OnClickListener,
 
         switch (item.getItemId()) {
             case R.id.action_filter:
+                //Lọc filter
                 intentClass = ImageFilterActivity.class;
                 intentType = PHOTO_FILTER_WITH_DATA;
 
                 break;
             case R.id.action_wrap:
+                //uốn,kéo img
                 intentClass = WarpActivity.class;
                 intentType = PHOTO_WARP_WITH_DATA;
                 break;
             case R.id.action_crop:
+                // cắt ảnh
                 intentClass = ImageCropActivity.class;
                 intentType = PHOTO_CROP_WITH_DATA;
                 break;
@@ -364,22 +364,22 @@ public class MainActivity extends Activity implements View.OnClickListener,
                 intentClass = DrawBaseActivity.class;
                 intentType = PHOTO_DRAW_WITH_DATA;
                 break;
-            case R.id.action_frame:
-                intentClass = PhotoFrameActivity.class;
-                intentType = PHOTO_FRAME_WITH_DATA;
-                break;
+//            case R.id.action_frame:
+//                intentClass = PhotoFrameActivity.class;
+//                intentType = PHOTO_FRAME_WITH_DATA;
+//                break;
             case R.id.action_addtv:
                 intentClass = AddTextActivity.class;
                 intentType = PHOTO_ADD_TEXT_DATA;
                 break;
-            case R.id.action_addwm:
-                intentClass = AddWatermarkActivity.class;
-                intentType = PHOTO_ADD_WATERMARK_DATA;
-                break;
-            case R.id.action_mosaic:
-                intentClass = MosaicActivity.class;
-                intentType = PHOTO_MOSAIC_WITH_DATA;
-                break;
+//            case R.id.action_addwm:
+//                intentClass = AddWatermarkActivity.class;
+//                intentType = PHOTO_ADD_WATERMARK_DATA;
+//                break;
+//            case R.id.action_mosaic:
+//                intentClass = MosaicActivity.class;
+//                intentType = PHOTO_MOSAIC_WITH_DATA;
+//                break;
             case R.id.action_enchance:
                 intentClass = EnhanceActivity.class;
                 intentType = PHOTO_ENHANCE_WITH_DATA;

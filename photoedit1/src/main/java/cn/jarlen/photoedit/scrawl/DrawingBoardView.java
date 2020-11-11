@@ -145,7 +145,7 @@ public class DrawingBoardView extends View
 	 *            chải
 	 * 
 	 * @param brushColor
-	 *            画笔颜色
+	 *            màu
 	 * 
 	 */
 	public void setBrushBitmap(DrawAttribute.DrawStatus drawStatus,

@@ -15,6 +15,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.CAMERA"/>
 
 
     <application
@@ -33,6 +34,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".adjust.FirtActivity"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".adjust.MainActivity"
             android:screenOrientation="portrait" />

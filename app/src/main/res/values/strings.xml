@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">Edit</string>
+    <string name="app_name">Photo Editor</string>
+    <string name="camera">Camera</string>
+    <string name="text_camera">Take Pictures</string>
+    <string name="edit">Effect</string>
+    <string name="text_edit">Edit Pictures</string>
+    <string name="info">Info</string>
+    <string name="info_student_01">Developed by Hoang Tuấn Anh - 1700163</string>
+    <string name="info_student_02">Lê Khắc Luyện - 17000765</string>
+    <string name="info_student_03">Nguyễn Thế Hải - 17000967</string>
+    <string name="text_info">Programmers</string>
+    <string name="exit">Exit</string>
+    <string name="text_exit">Quit App</string>
+    <string name="request_permission">Request Permission</string>
+    <string name="version_app">Version 1.0</string>
+
 </resources>

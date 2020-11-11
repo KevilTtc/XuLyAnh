@@ -92,28 +92,28 @@ public class PhotoFrame
 	 * Thêm tài nguyên khung
 	 * 
 	 * @param frame_around_left_top
-	 *            :左上
+	 *            :trái
 	 * @param frame_around_left
-	 *            :左
+	 *            :trái
 	 * @param frame_around_left_bottom
-	 *            :左下
+	 *            :Phía dưới bên trái
 	 * @param frame_around_bottom
-	 *            :下
+	 *            :Dưới
 	 * @param frame_around_right_bottom
-	 *            :右下
+	 *            :Dưới bên Phải
 	 * @param frame_around_right
-	 *            :右
+	 *            :phải
 	 * @param frame_around_right_top
-	 *            :右上
+	 *            :Trên bên phải
 	 * @param frame_around_top
-	 *            :上
+	 *            :trên
 	 */
 	public void setFrameResources(int frame_around_left_top,
 			int frame_around_left, int frame_around_left_bottom,
 			int frame_around_bottom, int frame_around_right_bottom,
 			int frame_around_right, int frame_around_right_top,
 			int frame_around_top)
-	{
+			{
 
 		mFrameListRes = new int[]{frame_around_left_top, frame_around_left,
 				frame_around_left_bottom, frame_around_bottom,
@@ -148,7 +148,8 @@ public class PhotoFrame
 	/**Thêm tài nguyên khung
 	 *
 	 * @param mList
-	 * Danh sách đường dẫn của hình ảnh tài nguyên nhỏ (Lưu ý: Thứ tự các hình ảnh là: trên cùng bên trái, bên trái, dưới cùng bên trái, dưới cùng, dưới cùng bên phải, bên phải, trên cùng bên phải, trên cùng)
+	 * Danh sách đường dẫn của hình ảnh tài nguyên nhỏ (Lưu ý: Thứ tự các hình ảnh là:
+	 * trên cùng bên trái, bên trái, dưới cùng bên trái, dưới cùng, dưới cùng bên phải, bên phải, trên cùng bên phải, trên cùng)
 	 * 
 	 */
 	public void setFrameListPath(ArrayList<String> mList)
@@ -220,7 +221,7 @@ public class PhotoFrame
 	 *
 	 * Thêm biên giới
 	 * @param res
-	 *            Tài nguyên biên giới
+	 *            Tài nguyên frame
 	 * @return
 	 */
 	private Bitmap combinateFrame(String res)

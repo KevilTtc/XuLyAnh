@@ -145,8 +145,15 @@ public class PhotoEnhance
 
 			case Enhance_Brightness :
 				brightnessMatrix.reset();
-				brightnessMatrix.set(new float[]{1, 0, 0, 0, brightNum, 0, 1,
-						0, 0, brightNum, 0, 0, 1, 0, brightNum, 0, 0, 0, 1, 0});
+				brightnessMatrix.set(
+						new float[]{
+									1, 0, 0, 0,
+									brightNum,
+									0, 1, 0, 0,
+									brightNum,
+									0, 0, 1, 0,
+									brightNum,
+									0, 0, 0, 1, 0});
 				break;
 			case Enhance_Contrast :
 
@@ -156,9 +163,15 @@ public class PhotoEnhance
 				regulateBright = (1 - contrastNum) * 128;
 
 				contrastMatrix.reset();
-				contrastMatrix.set(new float[]{contrastNum, 0, 0, 0,
-						regulateBright, 0, contrastNum, 0, 0, regulateBright,
-						0, 0, contrastNum, 0, regulateBright, 0, 0, 0, 1, 0});
+				contrastMatrix.set(new float[]{
+						contrastNum,
+						0, 0, 0,
+						regulateBright, 0,
+						contrastNum, 0, 0,
+						regulateBright,
+						0, 0, contrastNum,
+						0, regulateBright,
+						0, 0, 0, 1, 0});
 				break;
 
 			default :

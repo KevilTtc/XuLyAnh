@@ -17,8 +17,8 @@
 package cn.jarlen.photoedit.warp;
 
 /**
- * DESCRIBE: Sự biến dạng hình ảnh
- * Created by jarlen on 2016/10/8.
+ * DESCRIBE: change hình dạng hình ảnh
+ *
  */
 
 public class Picwarp {

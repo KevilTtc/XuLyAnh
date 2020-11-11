@@ -1,19 +1,4 @@
-/*
- *          Copyright (C) 2016 jarlen
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
+
 package com.example.edit.adjust;
 
 import android.app.Activity;
@@ -32,7 +17,7 @@ import cn.jarlen.photoedit.enhance.PhotoEnhance;
 import cn.jarlen.photoedit.utils.FileUtils;
 
 /**
- * 增强
+ * Nâng cao
  * @author jarlen
  */
 public class EnhanceActivity extends Activity implements View.OnClickListener, SeekBar.OnSeekBarChangeListener {
@@ -47,7 +32,7 @@ public class EnhanceActivity extends Activity implements View.OnClickListener, S
     private String imgPath;
     private Bitmap bitmapSrc;
 
-    private PhotoEnhance pe;
+    private PhotoEnhance photoEnhance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +72,7 @@ public class EnhanceActivity extends Activity implements View.OnClickListener, S
         contrastSeekBar.setProgress(128);
         contrastSeekBar.setOnSeekBarChangeListener(this);
 
-        pe = new PhotoEnhance(bitmapSrc);
+        photoEnhance = new PhotoEnhance(bitmapSrc);
 
     }
 
@@ -118,20 +103,22 @@ public class EnhanceActivity extends Activity implements View.OnClickListener, S
 
         switch (seekBar.getId())
         {
+            // bão hòa
             case R.id.saturation :
-                pe.setSaturation(pregress);
-                type = pe.Enhance_Saturation;
+                photoEnhance.setSaturation(pregress);
+                type = photoEnhance.Enhance_Saturation;
 
                 break;
+            //độ sáng
             case R.id.brightness :
-                pe.setBrightness(pregress);
-                type = pe.Enhance_Brightness;
+                photoEnhance.setBrightness(pregress);
+                type = photoEnhance.Enhance_Brightness;
 
                 break;
-
+            //tương phản
             case R.id.contrast :
-                pe.setContrast(pregress);
-                type = pe.Enhance_Contrast;
+                photoEnhance.setContrast(pregress);
+                type = photoEnhance.Enhance_Contrast;
 
                 break;
 
@@ -139,7 +126,7 @@ public class EnhanceActivity extends Activity implements View.OnClickListener, S
                 break;
         }
 
-        bit = pe.handleImage(type);
+        bit = photoEnhance.handleImage(type);
         pictureShow.setImageBitmap(bit);
 
     }
