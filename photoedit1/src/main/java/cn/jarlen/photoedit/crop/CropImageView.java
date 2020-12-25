@@ -321,7 +321,7 @@ public class CropImageView extends FrameLayout {
 
   /**
    * Gets the cropped image based on the current crop window.
-   * Nhận bản đồ khu vực cắt
+   * Nhận  khu vực cắt
    * 
    * @return
    * Bản đồ khu vực cắt
@@ -349,13 +349,13 @@ public class CropImageView extends FrameLayout {
         final float cropWindowWidth = Edge.getWidth();
         final float cropWindowHeight = Edge.getHeight();
 
-        // Scale the crop window position to the actual size of the Bitmap.
+        //Chia tỷ lệ vị trí cửa sổ cắt theo kích thước thực của Bitmap.
         final float actualCropX = cropWindowX * scaleFactorWidth;
         final float actualCropY = cropWindowY * scaleFactorHeight;
         final float actualCropWidth = cropWindowWidth * scaleFactorWidth;
         final float actualCropHeight = cropWindowHeight * scaleFactorHeight;
 
-        // Crop the subset from the original Bitmap.
+        //Cắt tập hợp con từ Bitmap ban đầu.
         final Bitmap croppedBitmap = Bitmap.createBitmap(mBitmap,
                                                          (int) actualCropX,
                                                          (int) actualCropY,
@@ -417,7 +417,7 @@ public class CropImageView extends FrameLayout {
     /**
      * Đặt kiểu cắt
      * 
-     * false: Cắt miễn phí
+     * false: Cắt
      * true : Cắt tỷ lệ kích thước cố định
      * 
      * @param fixAspectRatio

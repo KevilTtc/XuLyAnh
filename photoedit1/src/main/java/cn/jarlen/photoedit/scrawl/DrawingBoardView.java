@@ -160,6 +160,7 @@ public class DrawingBoardView extends View
 
 		switch (mDrawStatus)
 		{
+			//But mau nước
 			case PEN_WATER :
 
 				brushDistance = 1;
@@ -167,7 +168,7 @@ public class DrawingBoardView extends View
 				brushPaint = null;
 
 				break;
-
+			//Bút sáp màu
 			case PEN_CRAYON :
 
 				brushDistance = brushBitmap.getWidth() / 2;
@@ -175,17 +176,18 @@ public class DrawingBoardView extends View
 				brushPaint = null;
 
 				break;
-
+			//Bút cỡ lớn
 			case PEN_COLOR_BIG :
 				tempBrush = casualStroke(brushBitmap, brushColor);
 				brushDistance = 2;
 				brushPaint = null;
 
 				break;
-
+			//Tẩy
 			case PEN_ERASER :
 				brushPaint = new Paint();
 				brushPaint.setFilterBitmap(true);
+				//Lênh set or xoa
 				brushPaint.setXfermode(new PorterDuffXfermode(
 						PorterDuff.Mode.DST_OUT));
 

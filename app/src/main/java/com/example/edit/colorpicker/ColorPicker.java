@@ -596,7 +596,8 @@ public class ColorPicker extends View {
         float y = event.getY() - mTranslationOffset;
 
         switch (event.getAction()) {
-            case MotionEvent.ACTION_DOWN:
+            case
+                    MotionEvent.ACTION_DOWN:
                 // Check whether the user pressed on the pointer.
                 float[] pointerPosition = calculatePointerPosition(mAngle);
                 if (x >= (pointerPosition[0] - mColorPointerHaloRadius)

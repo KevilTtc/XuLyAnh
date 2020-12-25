@@ -144,7 +144,8 @@ public class OperateUtils {
      *Cách thêm hình ảnh
      * @param text        Nội dung văn bản
      * @param operateView Đối tượng Chế độ xem vùng chứa
-     * @param quadrant    Khu vực hình ảnh cần được hiển thị (1, phía trên bên trái, 2, phía trên bên phải, 3, phía dưới bên trái, 4, phía dưới bên phải, 5, chính giữa)
+     * @param quadrant    Khu vực hình ảnh cần được hiển thị (1, phía trên bên trái, 2,
+     *                    phía trên bên phải, 3, phía dưới bên trái, 4, phía dưới bên phải, 5, chính giữa)
      * @param x           Tọa độ X từ ranh giới
      * @param y           Tọa độ Y từ ranh giới
      * @return

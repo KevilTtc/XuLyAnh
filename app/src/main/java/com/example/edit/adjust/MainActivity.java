@@ -57,7 +57,7 @@ import pub.devrel.easypermissions.EasyPermissions;
 import pub.devrel.easypermissions.PermissionRequest;
 
 /**
- * 测试首页
+ * main
  *
  * @author jarlen
  */
@@ -380,6 +380,7 @@ public class MainActivity extends Activity implements View.OnClickListener,
 //                intentClass = MosaicActivity.class;
 //                intentType = PHOTO_MOSAIC_WITH_DATA;
 //                break;
+
             case R.id.action_enchance:
                 intentClass = EnhanceActivity.class;
                 intentType = PHOTO_ENHANCE_WITH_DATA;

@@ -210,9 +210,9 @@ public class ImageFilterActivity extends Activity implements View.OnClickListene
                         srcHeight, degree);
                 break;
             case FilterType.FILTER4COMICS :
-                dataResult = nativeFilters.comics(pix, srcWidth, srcHeight,
-                        degree);
-                break;
+//                dataResult = nativeFilters.comics(pix, srcWidth, srcHeight,
+//                        degree);
+//                break;
             case FilterType.FILTER4BlackWhite :
 //                dataResult = nativeFilters.ToBlackWhite(pix, srcWidth,
 //                        srcHeight, degree);

@@ -65,7 +65,7 @@ public class ImageCropActivity extends Activity implements Toolbar.OnMenuItemCli
 
         cropImage.setGuidelines(CropImageType.CROPIMAGE_GRID_ON_TOUCH);// Hiển thị lưới khi chạm vào
 
-        cropImage.setFixedAspectRatio(false);// Cắt miễn phí
+        cropImage.setFixedAspectRatio(false);// Cắt
 
     }
 

@@ -52,7 +52,7 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
 jstring test(JNIEnv *env, jobject obj) {
     return (*env).NewStringUTF("This is native filter !!!");
 }
-
+// convert image rgb to gray
 jintArray gray(JNIEnv *env, jobject obj, jintArray srcPixels, jint width, jint height,
                  jfloat factor) {
 
@@ -121,6 +121,7 @@ jintArray mosatic(JNIEnv *env, jobject obj, jintArray srcPixels, jint width, jin
     return resultArray;
 }
 
+// hiệu ứng âm u, kì quặc
 jintArray lomo(JNIEnv *env, jobject obj, jintArray srcPixels, jint width, jint height,
                  jfloat factor) {
     jint * pixels = NULL;
@@ -132,7 +133,7 @@ jintArray lomo(JNIEnv *env, jobject obj, jintArray srcPixels, jint width, jint h
 
     int size = width * height;
     int result[size];
-
+    //tỉ lệ
     int ratio =
             width > height ? height * 32768 / width : width * 32768 / height;
     int cx = width >> 1;
@@ -142,7 +143,6 @@ jintArray lomo(JNIEnv *env, jobject obj, jintArray srcPixels, jint width, jint h
     int diff = max - min;
 
     for (int i = 0; i < height; i++) {
-
         for (int j = 0; j < width; j++) {
             int current_color = pixels[i * width + j];
 
@@ -161,7 +161,7 @@ jintArray lomo(JNIEnv *env, jobject obj, jintArray srcPixels, jint width, jint h
 
             int newB = b0 / 2 + 0x25;
 
-            /*****************边缘黑暗**************/
+            /*****************Cạnh tối**************/
             int dx = cx - j;
             int dy = cy - i;
 
@@ -185,7 +185,7 @@ jintArray lomo(JNIEnv *env, jobject obj, jintArray srcPixels, jint width, jint h
                 newG = gi > 255 ? 255 : (gi < 0 ? 0 : gi);
                 newB = bi > 255 ? 255 : (bi < 0 ? 0 : bi);
             }
-            /**********************边缘黑暗end*****************/
+            /**********************Cuối cạnh tối*****************/
             current_color = ARGB(a0, newR, newG, newB);
             result[i * width + j] = current_color;
         }
@@ -197,6 +197,7 @@ jintArray lomo(JNIEnv *env, jobject obj, jintArray srcPixels, jint width, jint h
     return resultArray;
 }
 
+// Hiệu ứng cho ảnh cũ hoài cổ
 jintArray nostalgic(JNIEnv *env, jobject obj, jintArray srcPixels, jint width, jint height,
                       jfloat factor) {
     jint * pixels = NULL;
@@ -278,6 +279,7 @@ jintArray comics(JNIEnv *env, jobject obj, jintArray srcPixels, jint width, jint
     return resultArray;
 }
 
+// Hiệu ứng cho ảnh màu đen trắng xám giúp bức ảnh trở nên huyền bí với 2 màu chủ đạo đen trắng.
 jintArray brown(JNIEnv *env, jobject obj, jintArray srcPixels, jint width, jint height,
                   jfloat factor) {
     jint * cbuf;
@@ -330,6 +332,7 @@ jintArray brown(JNIEnv *env, jobject obj, jintArray srcPixels, jint width, jint 
     return result;
 }
 
+//Hiệu ứng pencil giúp phác thảo thành một bức tranh bằng chì rất sinh động.
 jintArray sketchPencil(JNIEnv *env, jobject obj, jintArray srcPixels, jint width, jint height) {
 
     jint * cbuf;
@@ -339,9 +342,9 @@ jintArray sketchPencil(JNIEnv *env, jobject obj, jintArray srcPixels, jint width
     }
 
     int newSize = width * height;
-    jint rbuf[newSize]; // 新图像像素值
+    jint rbuf[newSize]; // Giá trị pixel hình ảnh mới
 
-    // 先对图象的像素处理成灰度颜色后再取反
+    // Trước tiên, xử lý các pixel của hình ảnh thành màu xám và sau đó đảo ngược
 
     for (int i = 0; i < width; i++) {
         for (int j = 0; j < height; j++) {
@@ -350,32 +353,32 @@ jintArray sketchPencil(JNIEnv *env, jobject obj, jintArray srcPixels, jint width
             int color_row = cbuf[j * width + i + 1];
             int color_col = cbuf[(j + 1) * width + i];
 
-            //原图像素
+            //Pixel hình ảnh gốc
             int r0 = red(curr_color);
             int g0 = green(curr_color);
             int b0 = blue(curr_color);
 
-            // 同行像素
+            // Pixel ngang hàng
             int r1 = red(color_row);
             int g1 = green(color_row);
             int b1 = blue(color_row);
 
-            //同列像素
+            //Các điểm ảnh trong cùng một cột
             int r2 = red(color_col);
             int g2 = green(color_col);
             int b2 = blue(color_col);
 
-            //梯度处理，产生霓虹效果
+            //Xử lý gradient(dốc) để tạo ra hiệu ứng neon
             int r = 2 * sqrt((r0 - r1) * (r0 - r1) + (r0 - r2) * (r0 - r2));
             int g = 2 * sqrt((g0 - g1) * (g0 - g1) + (g0 - g2) * (g0 - g2));
             int b = 2 * sqrt((b0 - b1) * (b0 - b1) + (b0 - b2) * (b0 - b2));
 
-            //反色处理
+            //Xử lý màu ngược
             r = 255 - r;
             g = 255 - g;
             b = 255 - b;
 
-            // 灰度化
+            // Thang độ xám
             r = 0.299 * r + 0.587 * g + 0.114 * b;
             g = r;
             b = r;
